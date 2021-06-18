@@ -32,7 +32,7 @@ set mat=2
 " ============================================
 call plug#begin(stdpath('data') . '/plugged')
 " ============================================
-" TELESCOPE
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -124,8 +124,9 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " NERDTHREE
-
-
+"keybind for nerdtree
+nmap <leader>nt :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
